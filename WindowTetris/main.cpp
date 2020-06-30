@@ -22,9 +22,9 @@ LRESULT CALLBACK funcMyWindowProc(HWND   hWnd,
     int nKey = 0;
 
     switch (uMsg) {
-        //WM_CREATEÄÚÖ÷Òª×öÒ»Ğ©³õÊ¼»¯µÄÊÂÇé
+        //WM_CREATEå†…ä¸»è¦åšä¸€äº›åˆå§‹åŒ–çš„äº‹æƒ…
         case WM_CREATE: {
-            /*´°¿Ú³õÊ¼»¯*/
+            /*çª—å£åˆå§‹åŒ–*/
             HDC hDC = GetDC(hWnd);
             LPCREATESTRUCT lpCs = (LPCREATESTRUCT)lParam;
             CTest.hWnd = hWnd;
@@ -55,7 +55,7 @@ LRESULT CALLBACK funcMyWindowProc(HWND   hWnd,
 
             if (CTest.GameOver()) {
                 SetTimer(hWnd, 1, 99999999, nullptr);
-                MessageBox(NULL, "ÓÎÏ·½áÊø£¡", "ÌáÊ¾", MB_OK);
+                MessageBox(NULL, "æ¸¸æˆç»“æŸï¼", "æç¤º", MB_OK);
                 exit(0);
             }
             
@@ -171,7 +171,7 @@ LRESULT CALLBACK funcMyWindowProc(HWND   hWnd,
         break;
 
         case WM_CLOSE: {
-            int nFlag = MessageBox(hWnd, "ÊÇ·ñÍË³ö£¿", "ÌáÊ¾", MB_OKCANCEL);
+            int nFlag = MessageBox(hWnd, "æ˜¯å¦é€€å‡ºï¼Ÿ", "æç¤º", MB_OKCANCEL);
             if (nFlag == IDOK) {
                 DestroyWindow(hWnd);
             }
@@ -208,7 +208,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
                    LPSTR     lpCmdLine,
                    int       nCmdShow) {
 
-    MessageBox(NULL, "ÓÎÏ·¼´½«¿ªÊ¼£¡", "ÌáÊ¾", MB_OK);
+    MessageBox(NULL, "æ¸¸æˆå³å°†å¼€å§‹ï¼", "æç¤º", MB_OK);
     
     PlaySound(TEXT("sounds\\tetris_bgm.wav"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP);
 
@@ -226,7 +226,7 @@ int WINAPI WinMain(HINSTANCE hInstance,
 
     HWND hWnd = CreateWindow(
                     "TetrisWin32",
-                    "Tetris£¨×÷Õß£ºĞÂ»¯Ë¼Ô´ÊµÑéÑ§Ğ£ 1802°à ³ÂÎª£©",
+                    "Tetrix",
                     WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX,
                     800,
                     100,
@@ -255,10 +255,10 @@ int WINAPI WinMain(HINSTANCE hInstance,
             break;
         }
 
-        //·­ÒëÏûÏ¢£¬´¦ÀíĞéÄâ¼üĞÅÏ¢
+        //ç¿»è¯‘æ¶ˆæ¯ï¼Œå¤„ç†è™šæ‹Ÿé”®ä¿¡æ¯
         TranslateMessage(&msg);
 
-        //ÅÉ·¢ÏûÏ¢
+        //æ´¾å‘æ¶ˆæ¯
         DispatchMessage(&msg);
 
     }
