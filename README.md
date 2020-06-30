@@ -1,2 +1,2 @@
 # WindowsTetrix
-![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+![image](https://www.the996.com/wp-content/uploads/2020/06/tetrix.png)
